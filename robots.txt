@@ -1,3 +1,4 @@
 User-agent: *
 
+# Don't let Google execute JavaScript
 Disallow: /media/js
