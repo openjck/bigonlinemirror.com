@@ -19,6 +19,10 @@ body {
 }
 
 #mirror {
+    display: none;
+}
+
+#mirror.active {
     display: block;
     margin: 0 auto;
     height: 100%;
@@ -28,11 +32,10 @@ body {
     transform: scaleX(-1);
 }
 
-#error {
+.notice {
     font-family: Helvetica, Arial, sans-seif;
     font-size: 2.5em;
     text-align: center;
     font-weight: bold;
     color: #fff;
-    margin: 0;
 }

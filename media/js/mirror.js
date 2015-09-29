@@ -4,6 +4,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
                          navigator.msGetUserMedia;
 
 var video = document.getElementById('mirror');
+var wrap = document.getElementById('wrap');
 
 if (navigator.getUserMedia) {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -16,6 +17,8 @@ if (navigator.getUserMedia) {
         }
     }, function(stream) {
         video.src = window.URL.createObjectURL(stream);
+        video.className = video.className + ' active';
+        wrap.removeChild(document.getElementById('introduction'));
     }, handleError);
 } else {
     printErrorMessage('Browser not supported');
@@ -26,12 +29,15 @@ function handleError() {
 }
 
 function printErrorMessage(message) {
-    var wrap = document.getElementById('wrap');
     var p = document.createElement('p');
 
-    p.id = 'error';
+    p.className = 'notice error';
     p.innerHTML = message;
 
-    wrap.removeChild(video);
+    // Remove all children of #wrap
+    while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild);
+    }
+
     wrap.appendChild(p);
 }
