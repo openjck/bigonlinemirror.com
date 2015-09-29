@@ -6,11 +6,14 @@ navigator.getUserMedia = navigator.getUserMedia ||
 var video = document.getElementById('mirror');
 
 if (navigator.getUserMedia) {
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     navigator.getUserMedia({
-        video: true
+        video: {
+            width: { ideal: viewportWidth },
+            height: { ideal: viewportHeight }
+        }
     }, function(stream) {
         video.src = window.URL.createObjectURL(stream);
     }, handleError);
@@ -23,9 +26,12 @@ function handleError() {
 }
 
 function printErrorMessage(message) {
+    var wrap = document.getElementById('wrap');
     var p = document.createElement('p');
+
     p.id = 'error';
     p.innerHTML = message;
-    document.body.removeChild(video);
-    document.body.appendChild(p);
+
+    wrap.removeChild(video);
+    wrap.appendChild(p);
 }
