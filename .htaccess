@@ -1,0 +1,5 @@
+RewriteEngine on
+
+# Force non-www
+RewriteCond %{HTTP_HOST} ^www\.bigonlinemirror\.com [NC]
+RewriteRule (.*) http://bigonlinemirror.com/$1 [R=301,L]
