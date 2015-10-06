@@ -9,7 +9,7 @@ body {
     background-color: #333;
 }
 
-/* Vertical centering */
+/* Vertically-center messages */
 body {
     display: table;
 }
@@ -24,12 +24,18 @@ body {
 
 #mirror.active {
     display: block;
-    margin: 0 auto;
-    height: 100%;
-    max-width: 100%;
 
-    /* Reflect front-to-back like a mirror would */
-    transform: scaleX(-1);
+    /* Fill the viewport by "zooming in" rather than showing letterboxes */
+    /* http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) scaleX(-1) translateY(-50%); /* Use scaleX to reflect like a mirror would */
+    background-size: cover;
 }
 
 .notice {
