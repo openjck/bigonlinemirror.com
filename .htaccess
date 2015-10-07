@@ -1,5 +1,9 @@
 RewriteEngine on
 
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # Force non-www
 RewriteCond %{HTTP_HOST} ^www\.bigonlinemirror\.com [NC]
-RewriteRule (.*) http://bigonlinemirror.com/$1 [R=301,L]
+RewriteRule (.*) https://bigonlinemirror.com/$1 [R=301,L]
