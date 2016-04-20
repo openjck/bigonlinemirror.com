@@ -1,6 +1,0 @@
-{
-    "name": "bigonlinemirror.com",
-    "dependencies": {
-        "webrtc-adapter": "~0.2.3"
-    }
-}

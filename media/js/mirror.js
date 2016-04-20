@@ -1,25 +1,22 @@
-navigator.getUserMedia = navigator.getUserMedia ||
-                         navigator.webkitGetUserMedia ||
-                         navigator.mozGetUserMedia ||
-                         navigator.msGetUserMedia;
-
-var video = document.getElementById('mirror');
 var wrap = document.getElementById('wrap');
 
-if (navigator.getUserMedia) {
+if (navigator.mediaDevices.getUserMedia) {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    navigator.getUserMedia({
+    navigator.mediaDevices.getUserMedia({
+        audio: false,
         video: {
-            width: { ideal: viewportWidth },
-            height: { ideal: viewportHeight }
+            facingMode: "user",
+            width: viewportWidth,
+            height: viewportHeight
         }
-    }, function(stream) {
+    }).then(function(stream) {
+        var video = document.getElementById('mirror');
         video.src = window.URL.createObjectURL(stream);
         video.className = video.className + ' active';
         wrap.removeChild(document.getElementById('introduction'));
-    }, handleError);
+    }).catch(handleError);
 } else {
     printErrorMessage('Browser not supported');
 }

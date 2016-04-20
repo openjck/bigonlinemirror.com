@@ -1,4 +1,5 @@
 User-agent: *
 
-# Don't let Google execute JavaScript
+# Don't let Google execute JavaScript, as that would cause the introduction to
+# be replaced with an error message.
 Disallow: /media/js
