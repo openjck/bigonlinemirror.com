@@ -1,0 +1,6 @@
+User-agent: *
+
+# Don't allow crawlers to execute JavaScript, as the JavaScript makes the
+# introductory text disappear. Even worse, if a crawler doesn't support the
+# camera API, the introductory text would be replaced with an error message.
+Disallow: /*.js$
