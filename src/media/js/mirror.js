@@ -1,40 +1,72 @@
-var wrap = document.getElementById('wrap');
+const env = process.env.NODE_ENV || 'development';
+const wrap = document.getElementById('wrap');
 
 if (navigator.mediaDevices.getUserMedia) {
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    console.log(viewportWidth, viewportHeight);
 
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
             facingMode: "user",
             width: viewportWidth,
-            height: viewportHeight
+            height: viewportHeight,
         }
-    }).then(function(stream) {
-        var video = document.getElementById('mirror');
-        video.src = window.URL.createObjectURL(stream);
+    }).then(stream => {
+        const video = document.getElementById('mirror');
+        video.srcObject = stream;
         video.className = video.className + ' active';
         wrap.removeChild(document.getElementById('introduction'));
-    }).catch(handleError);
+    }).catch(err => {
+        if (env === 'development') {
+            console.error(err);
+        }
+
+        if (err.name === 'NotAllowedError') {
+            showError([
+                'You must allow camera access to show the mirror.',
+                'You will not be recorded.',
+                'Please reload and try again.',
+            ]);
+        } else {
+            showError('Error');
+        }
+    });
 } else {
-    printErrorMessage('Browser not supported');
+    showError('Browser not supported');
 }
 
-function handleError() {
-    printErrorMessage('Error');
-}
+function showError(message) {
 
-function printErrorMessage(message) {
-    var p = document.createElement('p');
+    if (Array.isArray(message)) {
+        const div = document.createElement('div');
+        div.className = 'notice error';
 
-    p.className = 'notice error';
-    p.innerHTML = message;
+        for (const messageLine of message) {
+            const p = document.createElement('p');
+            p.innerHTML = messageLine;
+            div.appendChild(p);
+        }
 
-    // Remove all children of #wrap
-    while (wrap.firstChild) {
-        wrap.removeChild(wrap.firstChild);
+        // Remove all children of #wrap
+        while (wrap.firstChild) {
+            wrap.removeChild(wrap.firstChild);
+        }
+
+        wrap.appendChild(div);
+    } else {
+        const p = document.createElement('p');
+
+        p.className = 'notice error';
+        p.innerHTML = message;
+
+        // Remove all children of #wrap
+        while (wrap.firstChild) {
+            wrap.removeChild(wrap.firstChild);
+        }
+
+        wrap.appendChild(p);
     }
-
-    wrap.appendChild(p);
 }
