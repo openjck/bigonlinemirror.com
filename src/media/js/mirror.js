@@ -51,7 +51,6 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 
 function showError(message) {
-
     if (Array.isArray(message)) {
         const div = document.createElement('div');
         div.className = 'notice error';
