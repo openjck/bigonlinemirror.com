@@ -8,7 +8,7 @@ if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
-            facingMode: "user",
+            facingMode: 'user',
             width: viewportWidth,
             height: viewportHeight,
         }
