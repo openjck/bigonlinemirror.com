@@ -30,6 +30,10 @@ if (navigator.mediaDevices.getUserMedia) {
     }).catch(err => {
         if (env === 'development') {
             console.error(err);
+
+            if (err.message) {
+                console.error(err.message);
+            }
         }
 
         if (err.name === 'NotAllowedError') {
