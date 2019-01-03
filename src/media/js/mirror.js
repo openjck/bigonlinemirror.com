@@ -5,8 +5,6 @@ if (navigator.mediaDevices.getUserMedia) {
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    console.log(viewportWidth, viewportHeight);
-
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
