@@ -14,7 +14,17 @@ if (navigator.mediaDevices.getUserMedia) {
         }
     }).then(stream => {
         const video = document.getElementById('mirror');
-        video.srcObject = stream;
+
+        // Newer browsers
+        if ('srcObject' in video) {
+            video.srcObject = stream;
+        }
+
+        // Older browsers
+        else {
+            video.src = window.URL.createObjectURL(stream);
+        }
+
         video.className = video.className + ' active';
         wrap.removeChild(document.getElementById('introduction'));
     }).catch(err => {
