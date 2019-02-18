@@ -13,16 +13,16 @@ the corresponding *To* URLs.
     </thead>
     <tbody>
         <tr>
-            <td><a href="http://bigonlinemirror.com">http://bigonlinemirror.com</a></td>
-            <td><a href="https://bigonlinemirror.com/">https://bigonlinemirror.com/</a></td>
+            <td>http://bigonlinemirror.com*</td>
+            <td>https://bigonlinemirror.com[match]</td>
         </tr>
         <tr>
-            <td><a href="http://www.bigonlinemirror.com">http://www.bigonlinemirror.com</a></td>
-            <td><a href="https://www.bigonlinemirror.com/">https://www.bigonlinemirror.com/</a></td>
+            <td>http://www.bigonlinemirror.com*</td>
+            <td>https://www.bigonlinemirror.com[match]</td>
         </tr>
         <tr>
-            <td><a href="https://www.bigonlinemirror.com">https://www.bigonlinemirror.com</a></td>
-            <td><a href="https://bigonlinemirror.com/">https://bigonlinemirror.com/</a></td>
+            <td>https://www.bigonlinemirror.com*</td>
+            <td>https://bigonlinemirror.com[match]</td>
         </tr>
     </tbody>
 </table>
