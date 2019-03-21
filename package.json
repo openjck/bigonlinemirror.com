@@ -7,7 +7,7 @@
         "build": "parcel build src/index.html src/404.html"
     },
     "devDependencies": {
-        "parcel": "1.12.2",
+        "parcel": "1.12.3",
         "parcel-plugin-static-files-copy": "2.0.0",
         "posthtml-expressions": "1.1.0"
     }
