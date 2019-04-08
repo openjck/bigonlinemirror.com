@@ -4,9 +4,16 @@
     "staticPath": "src/static",
     "scripts": {
         "dev": "parcel src/index.html src/404.html",
-        "build": "parcel build src/index.html src/404.html"
+        "build": "parcel build src/index.html src/404.html",
+        "format": "prettier --write '**/*.js'",
+        "lint": "eslint --ext .js,.json ."
     },
     "devDependencies": {
+        "@openjck/eslint-config-base": "3.0.0",
+        "@openjck/prettier-config-base": "1.0.8",
+        "eslint": "5.16.0",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-json": "1.4.0",
         "parcel": "1.12.3",
         "parcel-plugin-static-files-copy": "2.0.0",
         "posthtml-expressions": "1.1.0"
