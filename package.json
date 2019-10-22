@@ -14,7 +14,7 @@
         "@openjck/prettier-config-base": "1.0.8",
         "eslint": "6.5.1",
         "eslint-plugin-import": "2.18.2",
-        "eslint-plugin-json": "1.4.0",
+        "eslint-plugin-json": "2.0.1",
         "parcel": "1.12.4",
         "parcel-plugin-static-files-copy": "2.2.1",
         "posthtml-expressions": "1.1.1"
