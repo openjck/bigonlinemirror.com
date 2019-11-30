@@ -1,6 +1,9 @@
 module.exports = {
-    root: true,
-    plugins: ['json'],
-    extends: ['@openjck/eslint-config-base'],
-    env: { browser: true },
+  root: true,
+  plugins: ["prettier", "json"],
+  extends: ["airbnb-base", "prettier"],
+  env: { browser: true },
+  rules: {
+    "prettier/prettier": "error"
+  }
 };

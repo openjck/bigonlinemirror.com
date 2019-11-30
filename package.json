@@ -1,22 +1,24 @@
 {
-    "name": "bigonlinemirror.com",
-    "private": true,
-    "staticPath": "src/static",
-    "scripts": {
-        "dev": "parcel src/index.html src/404.html",
-        "build": "parcel build src/index.html src/404.html",
-        "format": "prettier --write '**/*.js'",
-        "test": "npm run lint",
-        "lint": "eslint --ext .js,.json ."
-    },
-    "devDependencies": {
-        "@openjck/eslint-config-base": "3.0.0",
-        "@openjck/prettier-config-base": "1.0.8",
-        "eslint": "6.7.1",
-        "eslint-plugin-import": "2.18.2",
-        "eslint-plugin-json": "2.0.1",
-        "parcel": "1.12.4",
-        "parcel-plugin-static-files-copy": "2.2.1",
-        "posthtml-expressions": "1.1.1"
-    }
+  "name": "bigonlinemirror.com",
+  "private": true,
+  "staticPath": "src/static",
+  "scripts": {
+    "dev": "parcel src/index.html src/404.html",
+    "build": "parcel build src/index.html src/404.html",
+    "format": "prettier --write '**/*.js' '**/*.json'",
+    "test": "npm run lint",
+    "lint": "eslint --ext .js --ext .json ."
+  },
+  "devDependencies": {
+    "eslint": "6.5.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-json": "1.4.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "parcel": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.2.1",
+    "posthtml-expressions": "1.1.1",
+    "prettier": "1.19.1"
+  }
 }
