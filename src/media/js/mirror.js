@@ -50,10 +50,10 @@ if (navigator.mediaDevices.getUserMedia) {
       video: {
         facingMode: "user",
         width: viewportWidth,
-        height: viewportHeight
-      }
+        height: viewportHeight,
+      },
     })
-    .then(stream => {
+    .then((stream) => {
       const video = document.getElementById("mirror");
 
       // srcObject is only supported in newer browsers
@@ -66,7 +66,7 @@ if (navigator.mediaDevices.getUserMedia) {
       video.className += " active";
       wrap.removeChild(document.getElementById("introduction"));
     })
-    .catch(err => {
+    .catch((err) => {
       if (env === "development") {
         // eslint-disable-next-line no-console
         console.error(err);
@@ -81,7 +81,7 @@ if (navigator.mediaDevices.getUserMedia) {
         showError([
           "You must allow camera access to show the mirror.",
           "You will not be recorded.",
-          "Please reload and try again."
+          "Please reload and try again.",
         ]);
       } else {
         showError("Error");

@@ -4,6 +4,6 @@ module.exports = {
   extends: ["airbnb-base", "prettier"],
   env: { browser: true },
   rules: {
-    "prettier/prettier": "error"
-  }
+    "prettier/prettier": "error",
+  },
 };
