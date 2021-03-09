@@ -3,7 +3,7 @@
   "private": true,
   "staticPath": "src/static",
   "scripts": {
-    "dev": "parcel src/index.html src/404.html",
+    "dev": "parcel serve src/index.html src/404.html",
     "build": "parcel build src/index.html src/404.html",
     "format": "prettier --write .",
     "test": "npm-run-all lint:*",
@@ -11,7 +11,7 @@
     "lint:prettier": "prettier --check ."
   },
   "dependencies": {
-    "parcel": "1.12.3",
+    "parcel": "2.0.0-beta.1",
     "parcel-plugin-static-files-copy": "2.5.1",
     "posthtml-expressions": "1.7.1"
   },
