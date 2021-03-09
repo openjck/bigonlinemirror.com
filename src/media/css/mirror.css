@@ -1,47 +1,49 @@
-html, body, #wrap {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+html,
+body,
+#wrap {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    background-color: #333;
+  background-color: #333;
 }
 
 /* Vertically-center messages */
 body {
-    display: table;
+  display: table;
 }
 #wrap {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #mirror {
-    display: none;
+  display: none;
 }
 
 #mirror.active {
-    display: block;
+  display: block;
 
-    /* Fill the viewport by "zooming in" rather than showing letterboxes */
-    /* http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) scaleX(-1) translateY(-50%); /* Use scaleX to reflect like a mirror would */
-    background-size: cover;
+  /* Fill the viewport by "zooming in" rather than showing letterboxes */
+  /* http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) scaleX(-1) translateY(-50%); /* Use scaleX to reflect like a mirror would */
+  background-size: cover;
 }
 
 .notice {
-    font-family: Helvetica, Arial, sans-seif;
-    font-size: 2.5em;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
+  font-family: Helvetica, Arial, sans-seif;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
 }
