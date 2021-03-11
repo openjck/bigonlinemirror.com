@@ -1,8 +1,6 @@
-# Generated files
-dist
-
 # Node
-node_modules
+node_modules/
 
 # Parcel
-.parcel-cache
+/dist/
+.parcel-cache/
