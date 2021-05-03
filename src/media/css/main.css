@@ -12,6 +12,7 @@ body {
 }
 
 /* Vertically-center messages */
+/* stylelint-disable-next-line no-duplicate-selectors */
 body {
   display: table;
 }
@@ -27,8 +28,8 @@ body {
 #mirror.active {
   display: block;
 
-  /* Fill the viewport by "zooming in" rather than showing letterboxes */
-  /* http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video */
+  /* Fill the viewport by "zooming in" rather than showing letterboxes
+     http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -41,7 +42,7 @@ body {
 }
 
 .notice {
-  font-family: Helvetica, Arial, sans-seif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   text-align: center;
   font-weight: bold;

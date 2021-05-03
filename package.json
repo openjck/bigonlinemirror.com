@@ -5,9 +5,11 @@
     "dev": "parcel serve src/index.html src/404.html",
     "build": "parcel build src/index.html src/404.html",
     "format": "prettier --write .",
-    "test": "npm-run-all lint:*",
-    "lint:eslint": "eslint --ext .js --ext .json .",
-    "lint:prettier": "prettier --check ."
+    "test": "npm run lint",
+    "lint": "npm-run-all lint:*",
+    "lint:style": "prettier --check .",
+    "lint:js": "eslint --ext .js --ext .json .",
+    "lint:css": "stylelint 'src/**/*.css'"
   },
   "dependencies": {
     "parcel": "2.0.0-beta.2",
@@ -15,13 +17,18 @@
     "posthtml-expressions": "1.7.1"
   },
   "devDependencies": {
-    "eslint": "7.21.0",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.25.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-prettier": "8.1.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-json": "2.1.2",
-    "eslint-plugin-prettier": "3.3.1",
     "npm-run-all": "4.1.5",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "stylelint": "13.13.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "22.0.0",
+    "typescript": "4.2.4"
   }
 }
