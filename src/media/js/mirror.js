@@ -1,4 +1,4 @@
-const debug = process.env.DEBUG || false;
+const env = process.env.env || "development";
 const wrap = document.getElementById("wrap");
 
 function showError(message) {
@@ -67,7 +67,7 @@ if (navigator.mediaDevices.getUserMedia) {
       wrap.removeChild(document.getElementById("introduction"));
     })
     .catch((err) => {
-      if (debug) {
+      if (env === "development") {
         // eslint-disable-next-line no-console
         console.error(err);
 
