@@ -1,0 +1,39 @@
+[build]
+
+  command = 'npm run build'
+  publish = 'dist'
+
+  [build.environment]
+    # Parcel requires at least Node 12, but we might as well go higher. Version
+    # 14 is the latest LTS as of 2021-09-14.
+    NODE_VERSION = '14'
+
+    # Manually bump the Ruby version to work around this bug:
+    # https://github.com/netlify/build-image/issues/599
+    RUBY_VERSION = '2.7.2'
+
+[[headers]]
+
+  for = '/*'
+
+  [headers.values]
+
+    Strict-Transport-Security = 'max-age=63072000; preload'
+    Content-Security-Policy = "default-src 'self'; script-src 'unsafe-inline' 'self' www.googletagmanager.com www.google-analytics.com; connect-src 'self' www.googletagmanager.com www.google-analytics.com; img-src 'self' www.googletagmanager.com www.google-analytics.com; object-src 'none'"
+    X-Content-Type-Options = 'nosniff'
+    X-Frame-Options = 'DENY'
+    X-XSS-Protection = '1; mode=block'
+
+[[redirects]]
+
+  from = 'https://brave-field-98182c.netlify.com/*'
+  to = 'https://bigonlinemirror.com/:splat'
+  status = 301
+  force = true
+
+[[redirects]]
+
+  from = 'https://brave-field-98182c.netlify.app/*'
+  to = 'https://bigonlinemirror.com/:splat'
+  status = 301
+  force = true

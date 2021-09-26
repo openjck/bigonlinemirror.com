@@ -1,0 +1,7 @@
+# Generated
+/dist/
+
+# Inverse matches (DO lint these)
+!.eslintrc.js
+!.prettierrc.js
+!.stylelintrc.js
