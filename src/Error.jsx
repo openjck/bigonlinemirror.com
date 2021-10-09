@@ -1,14 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-function Error({ error: { message } }) {
-  return <p id="error">{message}</p>;
+import { selectError } from "./state/slices/errorSlice";
+
+function Error() {
+  const error = useSelector(selectError);
+  return <p id="error">{error.message}</p>;
 }
-
-Error.propTypes = {
-  error: PropTypes.shape({
-    message: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default Error;

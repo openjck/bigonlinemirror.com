@@ -1,43 +1,30 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import Error from "./Error";
 import Splash from "./Splash";
 import Footer from "./Footer";
 import Mirror from "./Mirror";
+import { selectError } from "./state/slices/errorSlice";
+import { selectWebcam } from "./state/slices/webcamSlice";
 
 export default function App() {
-  const [error, setError] = useState(null);
-  const [webcam, setWebcam] = useState(null);
-
-  const handleError = useCallback((err) => {
-    setError(err);
-  }, []);
-
-  const handleWebcamSelection = useCallback((selection) => {
-    setWebcam(selection);
-  }, []);
+  const error = useSelector(selectError);
+  const webcam = useSelector(selectWebcam);
 
   let content;
   if (error) {
-    content = <Error error={error} />;
+    content = <Error />;
   } else if (webcam === null) {
-    content = (
-      <Splash
-        handleError={handleError}
-        handleWebcamSelection={handleWebcamSelection}
-      />
-    );
+    content = <Splash />;
   } else {
-    content = <Mirror handleError={handleError} webcam={webcam} />;
+    content = <Mirror />;
   }
 
   return (
     <>
       <main>{content}</main>
-      <Footer
-        handleError={handleError}
-        handleWebcamSelection={handleWebcamSelection}
-      />
+      <Footer />
     </>
   );
 }

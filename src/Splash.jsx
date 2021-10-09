@@ -1,7 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
-function Splash({ handleError, handleWebcamSelection }) {
+import { setError } from "./state/slices/errorSlice";
+import { setWebcam } from "./state/slices/webcamSlice";
+
+function Splash() {
+  const dispatch = useDispatch();
+
+  // Ultimately, the following will probably be used somewhere in this
+  // component:
+  //
+  // dispatch(setError())
+  // dispatch(setWebcam())
+
   return (
     <>
       <p>Instructions</p>
@@ -9,10 +20,5 @@ function Splash({ handleError, handleWebcamSelection }) {
     </>
   );
 }
-
-Splash.propTypes = {
-  handleError: PropTypes.func.isRequired,
-  handleWebcamSelection: PropTypes.func.isRequired,
-};
 
 export default Splash;

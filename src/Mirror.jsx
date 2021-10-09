@@ -1,13 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-function Mirror({ handleError, webcam }) {
+import { selectWebcam } from "./state/slices/webcamSlice";
+
+function Mirror() {
+  const webcam = useSelector(selectWebcam);
   return <p>Mirror using webcam {webcam}</p>;
 }
-
-Mirror.propTypes = {
-  handleError: PropTypes.func.isRequired,
-  webcam: PropTypes.string.isRequired,
-};
 
 export default Mirror;
