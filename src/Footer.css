@@ -1,0 +1,16 @@
+footer {
+  bottom: 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+}

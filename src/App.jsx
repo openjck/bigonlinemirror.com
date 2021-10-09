@@ -12,18 +12,23 @@ export default function App() {
   const error = useSelector(selectError);
   const webcam = useSelector(selectWebcam);
 
-  let content;
   if (error) {
-    content = <Error />;
-  } else if (webcam === null) {
-    content = <Splash />;
-  } else {
-    content = <Mirror />;
+    return <Error />;
+  }
+
+  if (webcam === null) {
+    return (
+      <main>
+        <Splash />
+      </main>
+    );
   }
 
   return (
     <>
-      <main>{content}</main>
+      <main>
+        <Mirror />
+      </main>
       <Footer />
     </>
   );
