@@ -8,7 +8,7 @@ import Mirror from "./Mirror";
 import { selectError } from "./state/slices/errorSlice";
 import { selectWebcam } from "./state/slices/webcamSlice";
 
-export default function App() {
+function App() {
   const error = useSelector(selectError);
   const webcam = useSelector(selectWebcam);
 
@@ -33,3 +33,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;
