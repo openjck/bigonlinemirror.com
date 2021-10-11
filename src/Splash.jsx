@@ -17,7 +17,6 @@ function Splash() {
     <>
       <p>Instructions</p>
       <p>Webcam selector</p>
-      <p>Link to source</p>
     </>
   );
 }

@@ -12,23 +12,18 @@ function App() {
   const error = useSelector(selectError);
   const webcam = useSelector(selectWebcam);
 
+  let body;
   if (error) {
-    return <Error />;
-  }
-
-  if (webcam === null) {
-    return (
-      <main>
-        <Splash />
-      </main>
-    );
+    body = <Error />;
+  } else if (webcam === null) {
+    body = <Splash />;
+  } else {
+    body = <Mirror />;
   }
 
   return (
     <>
-      <main>
-        <Mirror />
-      </main>
+      <main>{body}</main>
       <Footer />
     </>
   );
