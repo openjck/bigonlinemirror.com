@@ -6,7 +6,7 @@ import { setWebcam, selectWebcam } from "./state/slices/webcamSlice";
 
 import "./Footer.css";
 
-function Footer() {
+export default function Footer() {
   const dispatch = useDispatch();
   const webcam = useSelector(selectWebcam);
 
@@ -34,5 +34,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

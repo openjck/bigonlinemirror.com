@@ -3,9 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectWebcam } from "./state/slices/webcamSlice";
 
-function Mirror() {
+export default function Mirror() {
   const webcam = useSelector(selectWebcam);
   return <p>Mirror using webcam {webcam}</p>;
 }
-
-export default Mirror;

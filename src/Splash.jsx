@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setError } from "./state/slices/errorSlice";
 import { setWebcam } from "./state/slices/webcamSlice";
 
-function Splash() {
+export default function Splash() {
   const dispatch = useDispatch();
 
   // Ultimately, the following will probably be used somewhere in this
@@ -20,5 +20,3 @@ function Splash() {
     </>
   );
 }
-
-export default Splash;
