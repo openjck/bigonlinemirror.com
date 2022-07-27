@@ -22,7 +22,7 @@ export default function Footer() {
         bigonlinemirror.com is{" "}
         <a href="https://github.com/openjck/bigonlinemirror.com">
           free and open-source
-        </a>
+        </a>.
       </span>
       <span>
         TBD: Webcam selector
