@@ -1,4 +1,3 @@
-const env = process.env.env || "development";
 const wrap = document.getElementById("wrap");
 
 function showError(message) {
@@ -67,16 +66,6 @@ if (navigator.mediaDevices.getUserMedia) {
       wrap.removeChild(document.getElementById("introduction"));
     })
     .catch((err) => {
-      if (env === "development") {
-        // eslint-disable-next-line no-console
-        console.error(err);
-
-        if (err.message) {
-          // eslint-disable-next-line no-console
-          console.error(err.message);
-        }
-      }
-
       if (err.name === "NotAllowedError") {
         showError([
           "You must allow camera access to show the mirror.",
