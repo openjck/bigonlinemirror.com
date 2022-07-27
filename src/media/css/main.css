@@ -13,7 +13,7 @@ body {
 }
 
 /* Vertically-center messages */
-/* stylelint-disable-next-line no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors, rule-empty-line-before */
 body {
   display: table;
 }
@@ -21,6 +21,7 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
+/* stylelint-enable no-duplicate-selectors, rule-empty-line-before */
 
 #mirror {
   display: none;
