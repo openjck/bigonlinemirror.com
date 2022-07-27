@@ -20,15 +20,5 @@ module.exports = {
         ],
       },
     },
-    // Allow devDependencies to be imported in vite.config.js
-    {
-      files: ["vite.config.js"],
-      rules: {
-        "import/no-extraneous-dependencies": [
-          "error",
-          { devDependencies: true },
-        ],
-      },
-    },
   ],
 };
