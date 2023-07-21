@@ -3,11 +3,6 @@
   command = 'npm run build'
   publish = 'dist'
 
-  [build.environment]
-    # Use the latest Node LTS. Netlify defaults to something very old, perhaps
-    # because this site was first created a long time ago.
-    NODE_VERSION = 'lts/*'
-
 [[headers]]
 
   for = '/*'
