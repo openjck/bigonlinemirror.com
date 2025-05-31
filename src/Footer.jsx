@@ -19,8 +19,8 @@ export default function Footer() {
   return (
     <footer>
       <span>
-        bigonlinemirror.com is{" "}
-        <a href="https://github.com/openjck/bigonlinemirror.com">
+        This project is{" "}
+        <a href="https://github.com/openjck/mirror-we-app">
           free and open-source
         </a>.
       </span>
