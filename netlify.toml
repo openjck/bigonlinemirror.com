@@ -14,17 +14,3 @@
     X-Content-Type-Options = 'nosniff'
     X-Frame-Options = 'DENY'
     X-XSS-Protection = '1; mode=block'
-
-[[redirects]]
-
-  from = 'https://brave-field-98182c.netlify.com/*'
-  to = 'https://bigonlinemirror.com/:splat'
-  status = 301
-  force = true
-
-[[redirects]]
-
-  from = 'https://brave-field-98182c.netlify.app/*'
-  to = 'https://bigonlinemirror.com/:splat'
-  status = 301
-  force = true
